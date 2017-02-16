@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="js/dragComponent.js"></script>
+		<script type="text/javascript" src="js/test.js"></script>
+		<link rel="stylesheet" href="css/drag.css" />
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var stage = document.getElementsByClassName("stage")[0];
+
+				// a(drag);
+
+				var dragVal = new Drag({
+					data: ['失效', '有效'],
+					stageEle: stage
+				});
+				var dragDiv = document.getElementsByClassName("drag")[0];
+				dragVal.drag(dragDiv);
+				//						console.log(a);
+
+				//				drag.addEventListener("mousedown", function(e) {
+				//					var e = e || event;
+				//					var disx = e.clientX - this.offsetLeft;
+				//					var disy = e.clientY - this.offsetTop;
+				//					var dragging = true;
+				//					var _this = this;
+				//
+				//					//如果提供了事件对象，则这是一个非IE浏览器 
+				//					if(e && e.preventDefault) {
+				//						//阻止默认浏览器动作(W3C) 
+				//						e.preventDefault();
+				//					} else {
+				//						window.event.returnValue = false;
+				//					}
+				//					//如果提供了事件对象，则这是一个非IE浏览器
+				//					if(e && e.stopPropagation) {
+				//						//因此它支持W3C的stopPropagation()方法
+				//						e.stopPropagation();
+				//					} else {
+				//						//否则，我们需要使用IE的方式来取消事件冒泡 
+				//						window.event.cancelBubble = true;
+				//					}
+				//
+				//					document.addEventListener("mousemove", function(e) {
+				//						if(dragging) {
+				//							var e = e || event;
+				//							var Left = e.clientX - disx;
+				//							var Top = e.clientY - disy;
+				//
+				//							if(Left < 2) {
+				//								Left = 2;
+				//							} else if(Left > stage.clientWidth - drag.offsetWidth - 2) {
+				//								Left = stage.clientWidth - drag.offsetWidth - 2;
+				//							}
+				//
+				//							if(Top < 2) {
+				//								Top = 2;
+				//							} else if(Top > stage.clientHeight - drag.offsetHeight - 2) {
+				//								Top = stage.clientHeight - drag.offsetHeight - 2;
+				//							}
+				//
+				//							_this.style.left = Left + 'px';
+				//							_this.style.top = Top + 'px';
+				//						}
+				//					});
+				//
+				//					document.addEventListener("mouseup", function() {
+				//								dragging = false;
+				//					});
+				//
+				//				});
+
+				//				drag.onmousedown = function(e) {
+				//					var e = e || event;
+				//					var disx = e.clientX - this.offsetLeft;
+				//					var disy = e.clientY - this.offsetTop;
+				//					var _this = this;
+				//					document.onmousemove = function(e) {
+				//						var e = e || event;
+				//						var Left = e.clientX - disx;
+				//						var Top = e.clientY - disy;
+				//
+				//						if(Left < 2) {
+				//							Left = 2;
+				//						} else if(Left > stage.clientWidth - drag.offsetWidth - 2) {
+				//							Left = stage.clientWidth - drag.offsetWidth - 2;
+				//						}
+				//
+				//						if(Top < 2) {
+				//							Top = 2;
+				//						} else if(Top > stage.clientHeight - drag.offsetHeight - 2) {
+				//							Top = stage.clientHeight - drag.offsetHeight - 2;
+				//						}
+				//
+				//						_this.style.left = Left + 'px';
+				//						_this.style.top = Top + 'px';
+				//					}
+				//
+				//					document.onmouseup = function() {
+				//						document.onmousemove = null;
+				//						document.onmouseup = null;
+				//					}
+				//
+				//					return false;
+				//
+				//				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<div class="table-view">
+				<label>xxxx</label>
+
+				<div class="stage">
+					<div class="dragVal">xxx</div>
+					<div class="dragVal">yyy</div>
+					<div class="drag"></div>
+				</div>
+
+			</div>
+			<div class="table-view">
+				<input type="text" />
+			</div>
+			<div class="table-view">
+				<a class="table-btn">查&nbsp;&nbsp;&nbsp;询</a>
+			</div>
+		</div>
+
+	</body>
+
+</html>
