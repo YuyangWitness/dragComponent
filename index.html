@@ -16,7 +16,8 @@
 				// a(drag);
 
 				var dragVal = new Drag({
-					data: ['失效', '有效'],
+					index : [1,2,3],  //传入标志
+					data: ['全部', '处理中','已批复','已撤销'],  //传入数据
 					stageEle: stage
 				});
 				var dragDiv = document.getElementsByClassName("drag")[0];
@@ -117,17 +118,15 @@
 	<body>
 		<div>
 			<div class="table-view">
-				<label>xxxx</label>
+				<label>申请状态</label>
 
 				<div class="stage">
-					<div class="dragVal">xxx</div>
-					<div class="dragVal">yyy</div>
 					<div class="drag"></div>
 				</div>
 
 			</div>
 			<div class="table-view">
-				<input type="text" />
+				<input type="text" placeholder="请选择申请日期"/>
 			</div>
 			<div class="table-view">
 				<a class="table-btn">查&nbsp;&nbsp;&nbsp;询</a>
